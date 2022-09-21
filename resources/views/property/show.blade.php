@@ -334,7 +334,7 @@
                                                 @if($metre->metre_type->id == 1)
                                                 {{number_format(($metre->electricity->sum('reading')/\Illuminate\Support\Carbon::parse('2022-01-01')->diffInHours($metre->electricity->last()->created_at))/($metre->installed_capacity*0.8)*100,2)}} %
                                                 @elseif($metre->metre_type->id == 2)
-                                                    {{--number_format(($metre->water->sum('reading')/$metre->installed_capacity)*100,2)--}} %
+                                                    
 
                                                 @elseif($metre->metre_type->id == 3)
 
