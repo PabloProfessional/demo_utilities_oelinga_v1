@@ -9,6 +9,7 @@ use App\Http\Controllers\PropertyUnitMetreController;
 use App\Http\Controllers\PropertyUnitTenantController;
 use App\Http\Controllers\PropertyUnitBillController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\MQTThttpController;
 
 /*
 |--------------------------------------------------------------------------
@@ -47,5 +48,7 @@ Route::resource('property_unit_tenant',PropertyUnitTenantController::class)->mid
 Route::resource('property_unit_bill',PropertyUnitBillController::class)->middleware(['auth']);
 
 Route::get('/user/{id}',[UserController::class,'show'])->middleware(['auth'])->name('user');
+
+Route::resource('mqtt_http',MQTThttpController::class);
 
 require __DIR__.'/auth.php';
